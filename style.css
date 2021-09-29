@@ -173,6 +173,7 @@ html {
   flex-direction: column;
   justify-content: space-evenly;
   cursor: pointer;
+
   transition: right 0.7s;
 }
 
@@ -341,10 +342,15 @@ html {
   top: 0;
   right: -40rem;
   background-color: #fff;
-  transition: right 0.5s;
+
+  transition: right 0.5s; /* 🍀c43 js  */
   z-index: 100;
 }
 
+/* 🍀c43 js  
+ 1. transform 으로 효과 넣음
+ 2. .change.container의 child인 .sidebar에 효과 넣음
+ */
 .change .sidebar {
   right: 0;
 }
@@ -439,6 +445,10 @@ content: attr(data-content); */
   background-color: #c29525;
 }
 
+/* 🍀c101 grid
+columns 16칸 (line으로 따지면 1~17)
+row 6칸 (line으로 따지면 1~7)만듬
+*/
 .services {
   width: 100%;
   height: 100%;
@@ -451,6 +461,19 @@ content: attr(data-content); */
 .service {
   width: 100%;
   margin-bottom: 2rem;
+}
+
+/* 🍀c101 house image :  column line 7~11, row line 2~6 영역을차지함*/
+.about-us-img-wrapper {
+  grid-column: 7 / 11;
+  grid-row: 2 / 6;
+  width: 100%;
+}
+
+.about-us-img-wrapper img {
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.8;
 }
 
 .service:nth-child(1) {
@@ -507,18 +530,6 @@ content: attr(data-content); */
   font-family: "Josefin Slab", serif;
   font-size: 1.6rem;
   text-align: justify;
-}
-
-.about-us-img-wrapper {
-  grid-column: 7 / 11;
-  grid-row: 2 / 6;
-  width: 100%;
-}
-
-.about-us-img-wrapper img {
-  width: 100%;
-  object-fit: cover;
-  opacity: 0.8;
 }
 
 .team {
